@@ -1,0 +1,61 @@
+var c= document.getElementById("teste");
+var ctx=c.getContext("2d");
+	
+	
+	// Gradiente
+	var grdLinear= ctx.createLinearGradient (20,40,1800,900)
+	grdLinear.addColorStop (0,"blue");
+	grdLinear.addColorStop (1,"orange");
+	ctx.fillStyle = grdLinear;
+	
+	// retangulo //
+	//ctx.fillStyle= ("#67bd50");
+	//ctx.fillRect (20,40,1880,900);
+	
+	// Retângulo //
+	ctx.fillStyle= ("");
+	ctx.beginPath();
+	ctx.lineTo(1880,1880);
+	ctx.lineTo(1880,40);
+	ctx.lineTo(20,40);
+	ctx.lineTo(20,1880);
+	ctx.stroke();
+	ctx.fill ();
+	
+	//Linha do horizonte //
+	ctx.strokeStyle = "black";
+	ctx.lineWidth = 1;
+	ctx.beginPath();
+	ctx.moveTo (20,460);
+	ctx.lineTo (1880,460);
+	ctx.stroke();
+	
+	//  Rua //
+	ctx.fillStyle= ("#a0a4bd");
+	ctx.beginPath ();
+	ctx.strokeStyle = "black";
+	ctx.lineWidth = 2;
+	ctx.moveTo (1880,898);
+	ctx.lineTo (1050,460);
+	ctx.lineTo (850,460);
+	ctx.lineTo (24,898);
+	ctx.lineTo (1880,898);
+	ctx.fill ();
+	ctx.stroke();
+	
+	// Prédio
+	
+	ctx.fillStyle= ("");
+	ctx.beginPath();
+	ctx.moveTo (10,698);
+	ctx.lineTo(300,350);
+	ctx.lineTo(142,40);
+	ctx.lineTo(25,345);
+	ctx.lineTo(1880,);
+	ctx.stroke();
+	ctx.fill ();
+	
+	
+	
+	
+	
