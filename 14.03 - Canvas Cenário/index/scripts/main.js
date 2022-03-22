@@ -1,49 +1,46 @@
 var c= document.getElementById("teste");
 var ctx=c.getContext("2d");
-	
-	
+var img1 =  new Image();
+var img2 =  new Image();
+
+
+ctx.imageSmoothingEnabled = true;
+
 	// Sol
+	ctx.shadowColor = 'black';
+		ctx.shadowBlur = 10;
 	var grdLinear= ctx.createLinearGradient (20,40,0,900)
-	grdLinear.addColorStop (0,"#f55d03");
-	grdLinear.addColorStop (0.3,"#fea635");
-	grdLinear.addColorStop (0.4,"#ff8d81");
-	grdLinear.addColorStop (1,"#ff8d81");
+		grdLinear.addColorStop (0,"#f55d03");
+		grdLinear.addColorStop (0.3,"#fea635");
+		grdLinear.addColorStop (0.4,"#ff8d81");
+		grdLinear.addColorStop (1,"#ff8d81");
 	ctx.fillStyle = grdLinear;
 
 
-	
-	
 	// Retângulo
 	ctx.fillStyle= ("");
 	ctx.beginPath();
-	ctx.lineTo(1880,1880);
-	ctx.lineTo(1880,40);
-	ctx.lineTo(20,40);
-	ctx.lineTo(20,1880);
+		ctx.lineTo(1880,1880);
+		ctx.lineTo(1880,40);
+		ctx.lineTo(20,40);
+		ctx.lineTo(20,1880);
 	ctx.stroke();
 	ctx.fill ();
+
 	
 	// Céu
 	var grdLinear2= ctx.createLinearGradient (20,40,0,900)
-	grdLinear2.addColorStop (0,"#8EB9DD");
-	grdLinear2.addColorStop (0.3,"#d4b5a0");
-	grdLinear2.addColorStop (0.4,"#f6a06f");
-	grdLinear2.addColorStop (1,"#ff914d");
+		grdLinear2.addColorStop (0,"#012c70");
+		grdLinear2.addColorStop (0.15,"#005fb5");
+		grdLinear2.addColorStop (0.35,"#02aeff");
+		grdLinear2.addColorStop (0.55,"#35ffdd");
+		grdLinear2.addColorStop (1,"#35ffdd");
 	ctx.fillStyle = grdLinear2;
 	ctx.arc(950,460,200,0,2*3.14);
-	//ctx.fillStyle = grdRadial;
 	ctx.fill ();
 	ctx.closePath();
 	
-	//Linha do horizonte
-	ctx.strokeStyle = "black";
-	ctx.lineWidth = 1;
-	ctx.beginPath();
-	ctx.moveTo (20,460);
-	ctx.lineTo (1880,460);
-	ctx.stroke();
-	
-     // Grama
+    // Grama
 	var grdLinearG= ctx.createLinearGradient (20,40,0,900)
 	grdLinearG.addColorStop (0,"#C6F090");
 	grdLinearG.addColorStop (0.5,"#ACD448");
@@ -75,6 +72,20 @@ var ctx=c.getContext("2d");
 	ctx.lineTo (1880,898);
 	ctx.fill ();
 	
+	// Montanha
+	img1.onload = function()
+		{
+		ctx.drawImage(img1, 20, 60, 800, 400);
+		}
+	img1.src = 'img/montain1.png';
+	 
+	
+	img2.onload = function()
+		{
+			
+		ctx.drawImage(img2, 1080, 60, 800, 400);
+		}
+	img2.src = 'img/montain2.png';
 	
 
 	
