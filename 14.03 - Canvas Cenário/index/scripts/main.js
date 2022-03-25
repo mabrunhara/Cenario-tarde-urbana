@@ -1,8 +1,12 @@
 var c= document.getElementById("teste");
 var ctx=c.getContext("2d");
+
+
 var img1 =  new Image();
 var img2 =  new Image();
 
+
+ctx.imageSmoothingEnabled = true;
 
 ctx.imageSmoothingEnabled = true;
 
@@ -27,7 +31,7 @@ ctx.imageSmoothingEnabled = true;
 	ctx.stroke();
 	ctx.fill ();
 
-	
+
 	// Céu
 	var grdLinear2= ctx.createLinearGradient (20,40,0,900)
 		grdLinear2.addColorStop (0,"#012c70");
@@ -39,7 +43,15 @@ ctx.imageSmoothingEnabled = true;
 	ctx.arc(950,460,200,0,2*3.14);
 	ctx.fill ();
 	ctx.closePath();
-	
+
+	//Linha do horizonte
+	ctx.strokeStyle = "black";
+	ctx.lineWidth = 1;
+	ctx.beginPath();
+	ctx.moveTo (20,460);
+	ctx.lineTo (1880,460);
+	ctx.stroke();
+
     // Grama
 	var grdLinearG= ctx.createLinearGradient (20,40,0,900)
 	grdLinearG.addColorStop (0,"#C6F090");
@@ -54,9 +66,8 @@ ctx.imageSmoothingEnabled = true;
 	ctx.lineTo(1880,1000000);
 	ctx.stroke();
 	ctx.fill ();
-	
-	
-	// Rua
+
+// Rua
 	var grdLinearR= ctx.createLinearGradient (20,40,0,900)
 	grdLinearR.addColorStop (0.4,"#D99C63");
 	grdLinearR.addColorStop (0.6,"#946B44");
@@ -71,8 +82,8 @@ ctx.imageSmoothingEnabled = true;
 	ctx.lineTo (24,898);
 	ctx.lineTo (1880,898);
 	ctx.fill ();
-	
-	// Montanha
+
+// Montanha
 	img1.onload = function()
 		{
 		ctx.drawImage(img1, 20, 60, 800, 400);
@@ -87,9 +98,27 @@ ctx.imageSmoothingEnabled = true;
 		}
 	img2.src = 'img/montain2.png';
 	
+ // Texto	
+ctx.strokeStyle= "white";
+ctx.font = '20px Century Gothic';
+ctx.textBaseline = 'hanging';
+ctx.strokeText('Cenário Canvas - Maria Clara e Mariana 	2JD', 30, 860);
 
+
+// Traço da estrada 
+ctx.setLineDash([10, 20]);
+console.log(ctx.getLineDash());  // [10, 20]
+ctx.strokeStyle= "yellow";
+ctx.lineWidth= 10;
+ctx.beginPath();
+ctx.moveTo(950, 870);
+ctx.lineTo(950, 480);
+ctx.stroke();
 	
-	
-	
-	
+	// Códigos adicionais usados:
+	//ctx.imageSmoothingEnabled = true;
+	//img.onload
+	//ctx.shadowBlur = 10;
+	//ctx.textBaseline = 'hanging';
+	//ctx.setLineDash([10, 20]);
 	
