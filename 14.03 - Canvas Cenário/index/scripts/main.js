@@ -84,19 +84,19 @@ ctx.imageSmoothingEnabled = true;
 	ctx.fill ();
 
 // Montanha
-	img1.onload = function()
-		{
-		ctx.drawImage(img1, 20, 60, 800, 400);
-		}
-	img1.src = 'img/montain1.png';
+	//img1.onload = function()
+		//{
+		//ctx.drawImage(img1, 20, 60, 800, 400);
+		//}
+	//img1.src = 'img/montain1.png';
 	 
 	
-	img2.onload = function()
-		{
+	//img2.onload = function()
+		//{
 			
-		ctx.drawImage(img2, 1080, 60, 800, 400);
-		}
-	img2.src = 'img/montain2.png';
+		//ctx.drawImage(img2, 1080, 60, 800, 400);
+		//}
+	//img2.src = 'img/montain2.png';
 	
  // Texto	
 ctx.strokeStyle= "white";
